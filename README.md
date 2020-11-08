@@ -1,7 +1,7 @@
 # RKI-Covid-19-Interpreter-API
 ## Eine API um schnell aktuelle Covid-19 Zahlen zu sehen!
 
-Die API benutzt die Daten des Robert-Koch-Instutut welches diese auch in visueller Form [hier](https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/) zur Verfügung stellt!
+Die API benutzt die Daten des Robert-Koch-Institut welches diese auch in visueller Form [hier](https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/) zur Verfügung stellt!
 
 # Wie benutzt man die API?
 
