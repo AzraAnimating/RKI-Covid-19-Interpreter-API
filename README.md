@@ -20,4 +20,4 @@ Der Regionsname ist der Name der Region wie sie in der RKI-Karte aufgeführt ist
 
 ## Beispiel:
 
-http://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionsTyp=sk&regionName=Bochum
+https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionsTyp=sk&regionName=Bochum
