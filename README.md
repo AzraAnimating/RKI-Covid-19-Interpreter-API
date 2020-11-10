@@ -23,3 +23,10 @@ Der Regionsname ist der Name der Region wie sie in der [RKI-Karte](https://exper
 - https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionName=Ennepe-Ruhr-Kreis
 
 
+
+## Quellen:
+
+RKI-Daten-API:
+https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?where=Bundesland%20%3D%20%27NORDRHEIN-WESTFALEN%27%20AND%20Landkreis%20%3D%20%27SK%20BOCHUM%27&outFields=Landkreis,AnzahlFall,AnzahlTodesfall,Datenstand,Altersgruppe,Geschlecht&outSR=4326&f=json
+
+
