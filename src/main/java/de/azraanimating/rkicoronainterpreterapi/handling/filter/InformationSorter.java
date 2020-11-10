@@ -20,8 +20,9 @@ public class InformationSorter {
     }
 
 
-    public String getDataForRegion(final String state, final String regionType, final String regionName) throws IOException, JSONException {
-        String response = this.regionRequestHandler.getRegionData(state, regionType, regionName);
+    public String getDataForRegion(final String state, final String regionName) throws IOException, JSONException {
+        System.out.println("Lookup for '" + regionName + "' in '" + state + "'");
+        String response = this.regionRequestHandler.getRegionData(state, "lk", regionName);
         if(!response.equals("nodata")) {
             JSONObject rawObject = new JSONObject(response);
             if (rawObject.get("features") != null) {
@@ -40,10 +41,17 @@ public class InformationSorter {
 
                 JSONArray informationArray = rawObject.getJSONArray("features");
 
+                if(informationArray.length() < 1) {
+                    rawObject = new JSONObject(this.regionRequestHandler.getRegionData(state, "sk", regionName));
+                    informationArray = rawObject.getJSONArray("features");
+                }
+
+
                 ArrayList<JSONObject> information = new ArrayList<>();
+                JSONArray finalInformationArray = informationArray;
                 IntStream.range(0, informationArray.length()).forEach(value -> {
                     try {
-                        information.add(informationArray.getJSONObject(value).getJSONObject("attributes"));
+                        information.add(finalInformationArray.getJSONObject(value).getJSONObject("attributes"));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -106,6 +114,7 @@ public class InformationSorter {
 
                 jsonBuilder.createObject("altersGruppen", agegroupBuilder.build());
 
+                System.out.println("Sent Data for '" + regionName + "' in '" + state + "'");
                 return jsonBuilder.build();
             }
         }

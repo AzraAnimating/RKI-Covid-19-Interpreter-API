@@ -22,9 +22,9 @@ public class RestAPIHandler {
 
     @GetMapping("/rki-covid-19/region")
     @ResponseBody
-    public ResponseEntity<String> getRegionStats(@RequestParam final String bundesland, @RequestParam final String regionsTyp, @RequestParam final String regionName) {
+    public ResponseEntity<String> getRegionStats(@RequestParam final String bundesland, @RequestParam final String regionName) {
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(this.informationSorter.getDataForRegion(bundesland.toUpperCase(), regionsTyp.toUpperCase(), regionName.toUpperCase()));
+            return ResponseEntity.status(HttpStatus.OK).body(this.informationSorter.getDataForRegion(bundesland.toUpperCase(), regionName.toUpperCase()));
         } catch (IOException | JSONException exception) {
             exception.printStackTrace();
         }
