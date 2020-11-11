@@ -38,6 +38,10 @@ public class InformationSorter {
                     }
                 }
 
+                if(rawFeaturesArray.length() < 1) {
+                    return "{ \"data\" : \"none\" }";
+                }
+
                 JSONObject attributes = rawFeaturesArray.getJSONObject(0).getJSONObject("attributes");
                 JSONBuilder jsonBuilder = new JSONBuilder();
 
