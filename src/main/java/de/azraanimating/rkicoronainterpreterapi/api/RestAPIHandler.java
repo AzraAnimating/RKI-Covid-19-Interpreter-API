@@ -31,4 +31,15 @@ public class RestAPIHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{ \"data\" : \"none\" }");
     }
 
+    @GetMapping("/rki-covid-19/specific")
+    @ResponseBody
+    public ResponseEntity<String> getSpecificStats(@RequestParam final String regionName) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(this.informationSorter.getDataForCounty(regionName.toUpperCase()));
+        } catch (IOException | JSONException exception) {
+            exception.printStackTrace();
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{ \"data\" : \"none\" }");
+    }
+
 }

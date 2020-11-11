@@ -19,6 +19,44 @@ public class InformationSorter {
         this.regionRequestHandler = new RegionRequestHandler();
     }
 
+    public String getDataForCounty(final String countyName) throws IOException, JSONException {
+        System.out.println("Started Lookup for '" + countyName + "'");
+        String response = this.regionRequestHandler.getCountyData("lk", countyName);
+        if(response != null && !response.equals("nodata")) {
+            JSONObject rawObject = new JSONObject(response);
+            if(rawObject.get("features") != null) {
+                JSONArray rawFeaturesArray = rawObject.getJSONArray("features");
+
+                //falls der Prefix (Countyprefix) Falsch war, Stadtkreis nutzen
+                if(rawFeaturesArray.length() < 1) {
+                    response = this.regionRequestHandler.getCountyData("sk", countyName);
+                    if(response != null && !response.equals("nodata")) {
+                        rawObject = new JSONObject(response);
+                        if (rawObject.get("features") != null) {
+                            rawFeaturesArray = rawObject.getJSONArray("features");
+                        }
+                    }
+                }
+
+                JSONObject attributes = rawFeaturesArray.getJSONObject(0).getJSONObject("attributes");
+                JSONBuilder jsonBuilder = new JSONBuilder();
+
+                jsonBuilder
+                        .createObject("region", new JSONBuilder().createObject("bezeichnung", attributes.getString("BEZ")).createObject(("name"), attributes.getString("GEN")).build())
+                        .createObject("datenstand", attributes.getString("last_update"))
+                        .createObject("fälleGesamt", attributes.getString("cases"))
+                        .createObject("todesfälle", attributes.getString("deaths"))
+                        .createObject("todesrate", attributes.getString("death_rate"))
+                        .createObject("fällePro100KEinwohner", attributes.getString("cases7_per_100k"));
+
+                System.out.println("Sent Data for '" + countyName + "'");
+
+                return jsonBuilder.build();
+
+            }
+        }
+        return "{ \"data\" : \"none\" }";
+    }
 
     public String getDataForRegion(final String state, final String regionName) throws IOException, JSONException {
         System.out.println("Lookup for '" + regionName + "' in '" + state + "'");
