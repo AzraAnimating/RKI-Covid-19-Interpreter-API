@@ -35,6 +35,8 @@ Der Regionsname ist der Name der Region wie sie in der [RKI-Karte](https://exper
 ## Quellen:
 
 RKI-Daten-API:
-https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?where=Bundesland%20%3D%20%27NORDRHEIN-WESTFALEN%27%20AND%20Landkreis%20%3D%20%27SK%20BOCHUM%27&outFields=Landkreis,AnzahlFall,AnzahlTodesfall,Datenstand,Altersgruppe,Geschlecht&outSR=4326&f=json
+- https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?where=Bundesland%20%3D%20%27NORDRHEIN-WESTFALEN%27%20AND%20Landkreis%20%3D%20%27SK%20BOCHUM%27&outFields=Landkreis,AnzahlFall,AnzahlTodesfall,Datenstand,Altersgruppe,Geschlecht&outSR=4326&f=json
 
+
+- https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=county%20%3D%20'SK%20M%C3%9CNCHEN'&outFields=death_rate,cases,deaths,cases_per_100k,cases_per_population,last_update,cases7_per_100k,county,BEZ,GEN,KFL,EWZ&outSR=4326&f=json
 
