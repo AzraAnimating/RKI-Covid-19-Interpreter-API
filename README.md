@@ -11,17 +11,22 @@ GET api.zyonicsoftware.com/rki-covid-19/region
 
 ### Parameter
 - bundesland (Text)
-- regionsTyp (Text)
 - regionName (Text)
 
 Das Bundesland muss mit vollem Namen angegeben werden: "Nordrhein-Westfalen"
-Der Regionstyp ist entweder LK für Landkreis oder SK für Stadtkreis (Primär bei größeren Städten). Genaueres können Sie auch auf der [RKI-Karte](https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/) nachschauen.
 Der Regionsname ist der Name der Region wie sie in der [RKI-Karte](https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/) aufgeführt ist.
 
 ## Beispiele:
 
-- https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionsTyp=sk&regionName=Bochum
-- https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Bayern&regionsTyp=sk&regionName=Nürnberg
-- https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionsTyp=lk&regionName=Ennepe-Ruhr-Kreis
+- https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionName=Bochum
+- https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Bayern&regionName=Nürnberg
+- https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionName=Ennepe-Ruhr-Kreis
+
+
+
+## Quellen:
+
+RKI-Daten-API:
+https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?where=Bundesland%20%3D%20%27NORDRHEIN-WESTFALEN%27%20AND%20Landkreis%20%3D%20%27SK%20BOCHUM%27&outFields=Landkreis,AnzahlFall,AnzahlTodesfall,Datenstand,Altersgruppe,Geschlecht&outSR=4326&f=json
 
 
