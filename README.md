@@ -25,9 +25,9 @@ Der Regionsname ist der Name der Region wie sie in der [RKI-Karte](https://exper
 
 - https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionName=Bochum
 - https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Bayern&regionName=Nürnberg
-- https://api.zyonicsoftware.com/rki-covid-19/specific?bundesland=Nordrhein-Westfalen&regionName=Ennepe-Ruhr-Kreis
+- https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionName=Ennepe-Ruhr-Kreis
 
-- https://api.zyonicsoftware.com/rki-covid-19/region?regionName=Ennepe-Ruhr-Kreis
+- https://api.zyonicsoftware.com/rki-covid-19/specific?regionName=Ennepe-Ruhr-Kreis
 
 
 
