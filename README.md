@@ -5,13 +5,18 @@ Die API benutzt die Daten des Robert-Koch-Institut welches diese auch in visuell
 
 # Wie benutzt man die API?
 
-Es gibt derzeit einen Endpoint
+Es gibt derzeit zwei Endpoints
 
-GET api.zyonicsoftware.com/rki-covid-19/region
+GET api.zyonicsoftware.com/rki-covid-19/region (Limitation auf die letzten 1000 Meldungen aufgrund RKI-API)
 
 ### Parameter
 - bundesland (Text)
 - regionName (Text)
+
+GET api.zyonicsoftware.com/rki-covid-19/specific
+
+### Parameter
+-regionName (Text)
 
 Das Bundesland muss mit vollem Namen angegeben werden: "Nordrhein-Westfalen"
 Der Regionsname ist der Name der Region wie sie in der [RKI-Karte](https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/) aufgeführt ist.
@@ -21,6 +26,9 @@ Der Regionsname ist der Name der Region wie sie in der [RKI-Karte](https://exper
 - https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionName=Bochum
 - https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Bayern&regionName=Nürnberg
 - https://api.zyonicsoftware.com/rki-covid-19/region?bundesland=Nordrhein-Westfalen&regionName=Ennepe-Ruhr-Kreis
+
+- https://api.zyonicsoftware.com/rki-covid-19/specific?regionName=Ennepe-Ruhr-Kreis
+
 
 
 
