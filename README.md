@@ -1,3 +1,7 @@
+![Maintainer](https://img.shields.io/badge/Maintainer-AzraAnimating-blue?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/AzraAnimating/RKI-Covid-19-Interpreter-API?color=orange&style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AzraAnimating/RKI-Covid-19-Interpreter-API?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/AzraAnimating/RKI-Covid-19-Interpreter-API?style=for-the-badge)
 # RKI-Covid-19-Interpreter-API
 ## Eine API um schnell aktuelle Covid-19 Zahlen zu sehen!
 
